@@ -14,10 +14,14 @@ else
 	date=date
 fi
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+echo $DIR
+
 while read line
 do
 	echo "Processing $line"
-	folder="data/${line//[^0-9a-zA-Z]/_}"
+	folder="$DIR/data/${line//[^0-9a-zA-Z]/_}"
 	test -d $folder || mkdir -p $folder
 
 	target_file=$($date -u +"%Y-%m-%dT%H:%M:%S.%3NZ").txt
@@ -44,6 +48,6 @@ do
 		echo "Unchanged $latest_size"
 	fi
 	echo "\n\n\n"
-done < "targets"
+done < "$DIR/targets"
 
 
