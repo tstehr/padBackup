@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 if command -v gstat > /dev/null
 then
@@ -47,7 +47,7 @@ do
 	else
 		echo "Unchanged $latest_size"
 	fi
-	echo "\n\n\n"
+	echo -e "\n\n\n"
 done < "$DIR/targets"
 
 
