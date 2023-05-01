@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euxo pipefail
+
 if command -v gstat > /dev/null
 then
 	stat=gstat
